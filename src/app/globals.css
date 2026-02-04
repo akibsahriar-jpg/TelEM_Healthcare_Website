@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Base Colors */
+  --color-black: #070A08;
+  --color-charcoal: #0E1411;
+  --color-soft-white: #F6F8F7;
+  --color-white: #FFFFFF;
+
+  /* Primary */
+  --color-evergreen: #0E7A4F;
+  --color-emerald: #17A36B;
+
+  /* Accent */
+  --color-lime: #B9F24A;
+
+  /* Neutral shades */
+  --color-gray-100: #F0F2F1;
+  --color-gray-200: #E0E3E1;
+  --color-gray-300: #C4C8C6;
+  --color-gray-400: #9CA19E;
+  --color-gray-500: #6B726E;
+  --color-gray-600: #4A514D;
+  --color-gray-700: #2D332F;
+  --color-gray-800: #1A1F1C;
+
+  /* Fonts */
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-emerald);
+  color: var(--color-white);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-emerald);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-soft-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
+}
+
+/* Radar Animations */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+@keyframes radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes signal-blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-radar-pulse {
+  animation: radar-pulse 4s ease-in-out infinite;
+}
+
+.animate-radar-sweep {
+  animation: radar-sweep 8s linear infinite;
+  transform-origin: 400px 400px;
+}
+
+.animate-signal-blink {
+  animation: signal-blink 3s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-radar-pulse,
+  .animate-radar-sweep,
+  .animate-signal-blink {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

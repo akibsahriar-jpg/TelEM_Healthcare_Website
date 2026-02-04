@@ -1,0 +1,346 @@
+import type { Metadata } from "next";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { BackgroundGradient } from "@/components/BackgroundGradient";
+import { GradientButton } from "@/components/GradientButton";
+
+export const metadata: Metadata = {
+  title: "About | TelEM Healthcare",
+  description:
+    "Meet the clinical leadership behind TelEM Healthcare. Emergency medicine physicians and health informatics experts driving proactive remote patient monitoring for skilled nursing and senior living facilities.",
+};
+
+const leadership = [
+  {
+    name: "Dr. Sarah Chen",
+    role: "Chief Medical Officer",
+    credentials: "Board-certified Emergency Medicine",
+    bio: "15+ years of clinical leadership across academic medical centers and health systems. Dr. Chen architects TelEM's clinical protocols and ensures every escalation pathway meets the highest standards of emergency medicine practice.",
+  },
+  {
+    name: "Dr. James Okafor",
+    role: "VP of Clinical Operations",
+    credentials: "Health Informatics & Clinical Workflow Design",
+    bio: "Specializes in designing clinical workflows that integrate seamlessly with existing facility operations. Dr. Okafor bridges the gap between technology deployment and real-world nursing staff adoption.",
+  },
+  {
+    name: "Dr. Maria Santos",
+    role: "Director of Quality",
+    credentials: "Outcomes Research & Quality Improvement",
+    bio: "Leads TelEM's outcomes measurement and quality improvement initiatives. Dr. Santos ensures every protocol is evidence-based and every metric ties back to meaningful clinical and operational impact.",
+  },
+];
+
+const values = [
+  {
+    title: "Clinical Rigor",
+    description:
+      "Every protocol, every escalation pathway, every alert threshold is built on evidence-based medicine — not marketing claims. We hold ourselves to the same standards as a hospital floor.",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path
+          d="M16 4L20 12H28L22 17L24 26L16 21L8 26L10 17L4 12H12L16 4Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Patient-First",
+    description:
+      "Technology serves the patient, not the other way around. Contactless monitoring means zero compliance burden — no wearables to charge, no buttons to press, no workflows to learn.",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path
+          d="M16 28C16 28 4 20 4 13C4 9.68 6.68 7 10 7C12.2 7 14.16 8.2 15.2 10H16.8C17.84 8.2 19.8 7 22 7C25.32 7 28 9.68 28 13C28 20 16 28 16 28Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Innovation",
+    description:
+      "Radar-based contactless sensing, real-time trend analytics, and EM-physician-led oversight represent a fundamentally new approach to remote monitoring — quiet innovation that delivers measurable results.",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="4" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M16 4V8M16 24V28M4 16H8M24 16H28M7.5 7.5L10.3 10.3M21.7 21.7L24.5 24.5M24.5 7.5L21.7 10.3M10.3 21.7L7.5 24.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Partnership",
+    description:
+      "We augment your clinical team — we never replace them. TelEM is designed to integrate with existing workflows, strengthen on-site staff, and create shared accountability for patient outcomes.",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="10" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="22" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M2 26C2 22 5.6 18 10 18C12 18 13.8 18.8 15.2 20"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M16.8 20C18.2 18.8 20 18 22 18C26.4 18 30 22 30 26"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+];
+
+export default function AboutPage() {
+  return (
+    <div className="overflow-hidden">
+      {/* ==================== HERO ==================== */}
+      <section className="relative bg-charcoal pt-32 pb-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
+              About TelEM
+            </p>
+            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Redefining Remote Monitoring
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
+              TelEM Healthcare was founded on a singular conviction: that
+              post-acute and senior living patients deserve the same level of
+              clinical vigilance as those on a hospital floor. We combine
+              contactless radar technology with 24/7 emergency medicine
+              physician oversight to make that possible.
+            </p>
+          </div>
+        </div>
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      </section>
+
+      {/* ==================== MISSION ==================== */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
+                Our Mission
+              </p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+                Proactive Surveillance, Not Reactive Crisis Management
+              </h2>
+              <div className="mt-8 rounded-2xl border border-emerald/20 bg-soft-white p-8 md:p-12">
+                <blockquote className="text-xl font-medium leading-relaxed text-charcoal md:text-2xl">
+                  &ldquo;We believe every patient deserves proactive clinical
+                  surveillance — not reactive crisis management.&rdquo;
+                </blockquote>
+              </div>
+              <p className="mt-8 text-base leading-relaxed text-gray-500">
+                Too many facilities rely on intermittent spot-checks and manual
+                rounding to catch clinical deterioration. By the time symptoms
+                are visible, the window for early intervention has often closed.
+                TelEM exists to change that equation — turning ambient, continuous
+                data into early warnings that enable timely, confident clinical
+                decisions.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ==================== HEALTHCARE IMAGE ==================== */}
+      <section className="bg-white py-0 pb-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="overflow-hidden rounded-2xl">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=1200&h=500&fit=crop&q=80"
+                alt="Doctor consulting with an elderly patient in a modern clinical setting"
+                className="h-[320px] w-full object-cover md:h-[400px]"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ==================== CLINICAL LEADERSHIP ==================== */}
+      <section className="bg-soft-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
+              Clinical Leadership
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+              Led by Emergency Medicine Physicians
+            </h2>
+            <p className="mt-4 max-w-2xl text-gray-500">
+              Our leadership team brings decades of frontline clinical
+              experience, health informatics expertise, and a shared commitment
+              to raising the standard of remote patient monitoring.
+            </p>
+          </ScrollReveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {leadership.map((person, i) => (
+              <ScrollReveal key={person.name} delay={i * 120}>
+                <BackgroundGradient
+                  containerClassName="rounded-3xl"
+                  className="rounded-3xl bg-white p-8"
+                >
+                  {/* Avatar placeholder */}
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-evergreen/10 text-evergreen">
+                    <svg
+                      width="28"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                    >
+                      <circle
+                        cx="14"
+                        cy="10"
+                        r="5"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                      />
+                      <path
+                        d="M4 26C4 21 8.5 17 14 17C19.5 17 24 21 24 26"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-charcoal">
+                    {person.name}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-emerald">
+                    {person.role}
+                  </p>
+                  <p className="mt-1 text-xs font-medium uppercase tracking-wide text-gray-400">
+                    {person.credentials}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-gray-500">
+                    {person.bio}
+                  </p>
+                </BackgroundGradient>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== VALUES ==================== */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
+                What Guides Us
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+                Our Values
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-gray-500">
+                These principles shape every clinical protocol, every product
+                decision, and every partnership we build.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value, i) => (
+              <ScrollReveal key={value.title} delay={i * 100}>
+                <BackgroundGradient
+                  containerClassName="rounded-3xl"
+                  className="rounded-3xl bg-soft-white p-8"
+                >
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-white text-evergreen">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-charcoal">
+                    {value.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-500">
+                    {value.description}
+                  </p>
+                </BackgroundGradient>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== TEAM IMAGE ==================== */}
+      <section className="bg-soft-white py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="overflow-hidden rounded-2xl">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=1200&h=500&fit=crop&q=80"
+                alt="Healthcare professionals collaborating in a clinical environment"
+                className="h-[320px] w-full object-cover md:h-[400px]"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ==================== CTA ==================== */}
+      <section className="bg-soft-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="relative overflow-hidden rounded-3xl bg-charcoal p-12 text-center md:p-20">
+              {/* Decorative rings */}
+              <div className="pointer-events-none absolute inset-0 opacity-10">
+                <svg
+                  className="h-full w-full"
+                  viewBox="0 0 800 400"
+                  fill="none"
+                >
+                  {[80, 140, 200, 260].map((r, i) => (
+                    <circle
+                      key={r}
+                      cx="400"
+                      cy="200"
+                      r={r}
+                      stroke="#17A36B"
+                      strokeWidth="0.5"
+                      opacity={0.5 - i * 0.1}
+                    />
+                  ))}
+                </svg>
+              </div>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  Partner With a Team That Understands Clinical Reality
+                </h2>
+                <p className="mx-auto mt-4 max-w-xl text-gray-400">
+                  We built TelEM for operators who demand clinical rigor, not
+                  just technology demos. Schedule a conversation with our
+                  leadership team.
+                </p>
+                <div className="mt-8">
+                  <GradientButton href="/contact" variant="primary">
+                    Get in Touch
+                  </GradientButton>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </div>
+  );
+}
