@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
@@ -17,44 +18,15 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200/60 bg-white/80 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-evergreen">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-white"
-            >
-              <circle
-                cx="12"
-                cy="12"
-                r="3"
-                fill="currentColor"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                r="7"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                fill="none"
-                opacity="0.6"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                r="11"
-                stroke="currentColor"
-                strokeWidth="1"
-                fill="none"
-                opacity="0.3"
-              />
-            </svg>
-          </div>
-          <span className="font-heading text-2xl font-bold tracking-tight text-black">
-            TelEM
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/telem-logo-new.png"
+            alt="TelEM Healthcare"
+            width={160}
+            height={60}
+            className="h-auto w-40"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

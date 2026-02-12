@@ -344,8 +344,8 @@ export default function ServicesPage() {
             {integrationSteps.map((item, i) => (
               <ScrollReveal key={item.step} delay={i * 100}>
                 <BackgroundGradient
-                  containerClassName="rounded-3xl"
-                  className="rounded-3xl bg-charcoal p-8 md:p-10"
+                  containerClassName="rounded-3xl h-full"
+                  className="rounded-3xl bg-charcoal p-8 md:p-10 h-full flex flex-col"
                 >
                   <span className="text-xs font-bold uppercase tracking-widest text-emerald">
                     Step {item.step}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { BackgroundGradient } from "@/components/BackgroundGradient";
 import { GradientButton } from "@/components/GradientButton";
@@ -34,7 +35,7 @@ const values = [
   {
     title: "Clinical Rigor",
     description:
-      "Every protocol, every escalation pathway, every alert threshold is built on evidence-based medicine — not marketing claims. We hold ourselves to the same standards as a hospital floor.",
+      "Every protocol, every escalation pathway, every alert threshold is built on evidence-based medicine, not marketing claims. We hold ourselves to the same standards as a hospital floor.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <path
@@ -49,7 +50,7 @@ const values = [
   {
     title: "Patient-First",
     description:
-      "Technology serves the patient, not the other way around. Contactless monitoring means zero compliance burden — no wearables to charge, no buttons to press, no workflows to learn.",
+      "Technology serves the patient, not the other way around. Contactless monitoring means zero compliance burden: no wearables to charge, no buttons to press, no workflows to learn.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <path
@@ -64,7 +65,7 @@ const values = [
   {
     title: "Innovation",
     description:
-      "Radar-based contactless sensing, real-time trend analytics, and EM-physician-led oversight represent a fundamentally new approach to remote monitoring — quiet innovation that delivers measurable results.",
+      "Radar-based contactless sensing, real-time trend analytics, and EM-physician-led oversight represent a fundamentally new approach to remote monitoring: quiet innovation that delivers measurable results.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <circle cx="16" cy="16" r="4" stroke="currentColor" strokeWidth="1.5" />
@@ -80,7 +81,7 @@ const values = [
   {
     title: "Partnership",
     description:
-      "We augment your clinical team — we never replace them. TelEM is designed to integrate with existing workflows, strengthen on-site staff, and create shared accountability for patient outcomes.",
+      "We augment your clinical team and never replace them. TelEM is designed to integrate with existing workflows, strengthen on-site staff, and create shared accountability for patient outcomes.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <circle cx="10" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
@@ -126,6 +127,81 @@ export default function AboutPage() {
         </div>
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      </section>
+
+      {/* ==================== FOUNDER ==================== */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+                Leadership Rooted in Frontline Medicine
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-16">
+            <ScrollReveal delay={100}>
+              <BackgroundGradient
+                containerClassName="rounded-3xl max-w-5xl mx-auto"
+                className="rounded-3xl bg-white p-10 md:p-12"
+              >
+                <div className="grid grid-cols-1 gap-10 md:grid-cols-[300px_1fr] items-start">
+                  {/* Photo */}
+                  <div className="mx-auto md:mx-0">
+                    <div className="overflow-hidden rounded-2xl">
+                      <Image
+                        src="/dr-usama.png"
+                        alt="Dr. Usama Khalid"
+                        width={300}
+                        height={300}
+                        className="h-auto w-full object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Bio */}
+                  <div className="flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold text-charcoal">
+                      Usama Khalid, MD, FACEP
+                    </h3>
+                    <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-emerald">
+                      Co-Founder & Chief Medical Officer
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-gray-400">
+                      Board-Certified Emergency Medicine | Fellowship-Trained
+                      Advanced Emergency Ultrasonography
+                    </p>
+                    <div className="mt-6 space-y-4 text-base leading-relaxed text-gray-600">
+                      <p>
+                        Usama Khalid, MD, FACEP is a board-certified emergency
+                        physician and co-founder of TelEM Healthcare.
+                        Fellowship-trained with a Focused Practice Designation
+                        in Advanced Emergency Ultrasonography, he brings deep
+                        frontline experience across both academic and community
+                        emergency departments.
+                      </p>
+                      <p>
+                        Usama's work sits at the intersection of clinical
+                        medicine and technology, where he advises on digital
+                        health, AI-enabled care models, and operational
+                        workflows that improve outcomes for high-risk patients.
+                      </p>
+                      <p>
+                        At TelEM Healthcare, he leads the development of remote
+                        monitoring and care coordination programs for skilled
+                        nursing facilities, with a focus on reducing avoidable
+                        hospital readmissions and improving patient safety.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </BackgroundGradient>
+            </ScrollReveal>
+          </div>
+        </div>
       </section>
 
       {/* ==================== MISSION ==================== */}
@@ -195,8 +271,8 @@ export default function AboutPage() {
             {leadership.map((person, i) => (
               <ScrollReveal key={person.name} delay={i * 120}>
                 <BackgroundGradient
-                  containerClassName="rounded-3xl"
-                  className="rounded-3xl bg-white p-8"
+                  containerClassName="rounded-3xl h-full"
+                  className="rounded-3xl bg-white p-8 h-full flex flex-col"
                 >
                   {/* Avatar placeholder */}
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-evergreen/10 text-evergreen">
@@ -262,8 +338,8 @@ export default function AboutPage() {
             {values.map((value, i) => (
               <ScrollReveal key={value.title} delay={i * 100}>
                 <BackgroundGradient
-                  containerClassName="rounded-3xl"
-                  className="rounded-3xl bg-soft-white p-8"
+                  containerClassName="rounded-3xl h-full"
+                  className="rounded-3xl bg-soft-white p-8 h-full flex flex-col"
                 >
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-white text-evergreen">
                     {value.icon}

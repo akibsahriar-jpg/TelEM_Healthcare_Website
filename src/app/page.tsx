@@ -223,7 +223,7 @@ export default function Home() {
             {[
               {
                 title: "EM-Physician Led",
-                text: "Board-certified emergency medicine physicians — not nurses, not algorithms alone.",
+                text: "Board-certified emergency medicine physicians, not nurses, not algorithms alone.",
               },
               {
                 title: "HIPAA Compliant",
@@ -236,8 +236,8 @@ export default function Home() {
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100}>
                 <BackgroundGradient
-                  containerClassName="rounded-3xl"
-                  className="rounded-3xl bg-white p-10"
+                  containerClassName="rounded-3xl h-full"
+                  className="rounded-3xl bg-white p-10 h-full flex flex-col"
                 >
                   <h3 className="text-lg font-semibold text-charcoal">
                     {item.title}
@@ -284,8 +284,8 @@ export default function Home() {
             {outcomes.map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 100}>
                 <BackgroundGradient
-                  containerClassName="rounded-3xl"
-                  className="rounded-3xl bg-white p-8"
+                  containerClassName="rounded-3xl h-full"
+                  className="rounded-3xl bg-white p-8 h-full flex flex-col"
                 >
                   <p className="text-4xl font-bold tracking-tight text-evergreen">
                     {item.stat}
@@ -364,17 +364,17 @@ export default function Home() {
             {services.map((service, i) => (
               <ScrollReveal key={service.title} delay={i * 100}>
                 <BackgroundGradient
-                  containerClassName="rounded-3xl"
-                  className="rounded-3xl"
+                  containerClassName="rounded-3xl h-full"
+                  className="rounded-3xl h-full"
                 >
                   <Link
                     href={service.href}
-                    className="group block rounded-3xl bg-gray-800/90 p-8 transition-all hover:bg-gray-800"
+                    className="group flex h-full flex-col rounded-3xl bg-gray-800/90 p-8 transition-all hover:bg-gray-800"
                   >
                     <h3 className="text-xl font-semibold text-white group-hover:text-emerald">
                       {service.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-400">
                       {service.description}
                     </p>
                     <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-emerald">
@@ -419,8 +419,8 @@ export default function Home() {
             {settings.map((setting, i) => (
               <ScrollReveal key={setting.name} delay={i * 100}>
                 <BackgroundGradient
-                  containerClassName="rounded-3xl"
-                  className="rounded-3xl bg-white p-8"
+                  containerClassName="rounded-3xl h-full"
+                  className="rounded-3xl bg-white p-8 h-full flex flex-col"
                 >
                   <h3 className="text-lg font-semibold text-charcoal">
                     {setting.name}
