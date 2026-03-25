@@ -266,7 +266,7 @@ export function ContactForm() {
             Sending...
           </>
         ) : (
-          "Request a Demo"
+          "Get Started"
         )}
       </button>
     </form>
