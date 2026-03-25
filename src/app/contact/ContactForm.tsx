@@ -34,6 +34,8 @@ const referralOptions = [
 export function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   function handleChange(
     e: React.ChangeEvent<
@@ -44,11 +46,27 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // v1 placeholder — webhook integration comes later
-    console.log("Contact form submission:", formData);
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      // Direct call to server action
+      const { sendContactEmail } = await import("../actions/contact");
+      const result = await sendContactEmail(formData);
+
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setError(result.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      console.error("Form submission error:", err);
+      setError("An unexpected error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -226,12 +244,30 @@ export function ContactForm() {
         />
       </div>
 
+      {/* Error Message */}
+      {error && (
+        <div className="rounded-lg bg-red-50 p-4 text-sm text-red-600 border border-red-100">
+          {error}
+        </div>
+      )}
+
       {/* Submit */}
       <button
         type="submit"
-        className="w-full rounded-full bg-emerald px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-evergreen hover:shadow-lg hover:shadow-emerald/20"
+        disabled={isSubmitting}
+        className="w-full rounded-full bg-emerald px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-evergreen hover:shadow-lg hover:shadow-emerald/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
-        Request a Demo
+        {isSubmitting ? (
+          <>
+            <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+            </svg>
+            Sending...
+          </>
+        ) : (
+          "Request a Demo"
+        )}
       </button>
     </form>
   );
