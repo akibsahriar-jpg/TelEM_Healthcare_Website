@@ -46,11 +46,6 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Selection */
 ::selection {
   background: var(--color-emerald);
@@ -134,9 +129,5 @@ html {
   .animate-radar-sweep,
   .animate-signal-blink {
     animation: none;
-  }
-
-  html {
-    scroll-behavior: auto;
   }
 }

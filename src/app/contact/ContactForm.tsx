@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface FormData {
   fullName: string;
@@ -36,6 +36,13 @@ export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (submitted && successRef.current) {
+      successRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [submitted]);
 
   function handleChange(
     e: React.ChangeEvent<
@@ -71,7 +78,10 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-emerald/20 bg-emerald/5 p-10 text-center">
+      <div
+        ref={successRef}
+        className="rounded-2xl border border-emerald/20 bg-emerald/5 p-10 text-center"
+      >
         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald/10">
           <svg
             width="28"
