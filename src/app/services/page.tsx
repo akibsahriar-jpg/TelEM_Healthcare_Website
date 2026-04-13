@@ -40,7 +40,7 @@ export default function ServicesPage() {
   return (
     <div className="overflow-hidden">
       {/* ==================== HERO ==================== */}
-      <section className="relative bg-charcoal pt-32 pb-24">
+      <section className="relative bg-charcoal pt-44 pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-widest text-emerald">

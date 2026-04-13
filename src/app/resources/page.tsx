@@ -69,7 +69,7 @@ export default function ResourcesPage() {
   return (
     <div className="overflow-hidden">
       {/* ==================== HERO ==================== */}
-      <section className="relative bg-charcoal pt-32 pb-20">
+      <section className="relative bg-charcoal pt-44 pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="max-w-3xl">

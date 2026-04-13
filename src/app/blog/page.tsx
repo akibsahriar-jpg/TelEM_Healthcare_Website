@@ -47,7 +47,7 @@ export default function BlogPage() {
   return (
     <div className="overflow-hidden">
       {/* ==================== HERO ==================== */}
-      <section className="bg-charcoal pt-32 pb-20">
+      <section className="bg-charcoal pt-44 pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
