@@ -240,7 +240,7 @@ export default function ServicesPage() {
               {/* Right: Visual */}
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src="/readdmission-reduction.png"
+                  src="/readmission-reduction.png"
                   alt="Patient journey from emergency department through acute care, post-acute care, and home"
                   width={1693}
                   height={929}

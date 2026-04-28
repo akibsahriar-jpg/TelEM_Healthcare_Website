@@ -122,9 +122,9 @@ const howItWorks = [
 
 const services = [
   {
-    title: "EM-led Clinical Oversight",
+    title: "Tele-specialist Support",
     description:
-      "Multidisciplinary teams led by Board-certified EM physicians.",
+      "Multi-specialty consultative support that assists discharge planning and post-acute care transitions.",
     href: "/services",
   },
   {
@@ -134,9 +134,9 @@ const services = [
     href: "/services",
   },
   {
-    title: "Telemedicine",
+    title: "Readmission Reduction Program",
     description:
-      "Multi-specialty support using robust telemedicine workflows.",
+      "Proactive intervention protocols that catch clinical deterioration early — keeping patients stable and out of the emergency department.",
     href: "/services",
   },
   {
