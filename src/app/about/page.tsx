@@ -7,29 +7,8 @@ import { GradientButton } from "@/components/GradientButton";
 export const metadata: Metadata = {
   title: "About | TelEM Healthcare",
   description:
-    "Meet the clinical leadership behind TelEM Healthcare. Emergency medicine physicians and health informatics experts driving proactive remote patient monitoring for skilled nursing and senior living facilities.",
+    "Meet the founding clinical team behind TelEM Healthcare. Emergency medicine physicians driving proactive care transitions and remote patient monitoring for skilled nursing and senior living facilities.",
 };
-
-const leadership = [
-  {
-    name: "Dr. Sarah Chen",
-    role: "Chief Medical Officer",
-    credentials: "Board-certified Emergency Medicine",
-    bio: "15+ years of clinical leadership across academic medical centers and health systems. Dr. Chen architects TelEM's clinical protocols and ensures every escalation pathway meets the highest standards of emergency medicine practice.",
-  },
-  {
-    name: "Dr. James Okafor",
-    role: "VP of Clinical Operations",
-    credentials: "Health Informatics & Clinical Workflow Design",
-    bio: "Specializes in designing clinical workflows that integrate seamlessly with existing facility operations. Dr. Okafor bridges the gap between technology deployment and real-world nursing staff adoption.",
-  },
-  {
-    name: "Dr. Maria Santos",
-    role: "Director of Quality",
-    credentials: "Outcomes Research & Quality Improvement",
-    bio: "Leads TelEM's outcomes measurement and quality improvement initiatives. Dr. Santos ensures every protocol is evidence-based and every metric ties back to meaningful clinical and operational impact.",
-  },
-];
 
 const values = [
   {
@@ -118,10 +97,11 @@ export default function AboutPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
               TelEM Healthcare was founded on a singular conviction: that
-              post-acute and senior living patients deserve the same level of
-              clinical vigilance as those on a hospital floor. We combine
-              contactless radar technology with 24/7 emergency medicine
-              physician oversight to make that possible.
+              transitions in care need to be effective and patient-focused.
+              Post-acute care and senior living patients deserve higher
+              levels of clinical vigilance and multidisciplinary
+              communication to keep them healthy and allow aging with
+              dignity.
             </p>
           </div>
         </div>
@@ -205,7 +185,7 @@ export default function AboutPage() {
       </section>
 
       {/* ==================== MISSION ==================== */}
-      <section className="bg-white py-24">
+      <section className="bg-soft-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -215,7 +195,7 @@ export default function AboutPage() {
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
                 Proactive Surveillance, Not Reactive Crisis Management
               </h2>
-              <div className="mt-8 rounded-2xl border border-emerald/20 bg-soft-white p-8 md:p-12">
+              <div className="mt-8 rounded-2xl border border-emerald/20 bg-white p-8 md:p-12">
                 <blockquote className="text-xl font-medium leading-relaxed text-charcoal md:text-2xl">
                   &ldquo;We believe every patient deserves proactive clinical
                   surveillance — not reactive crisis management.&rdquo;
@@ -231,88 +211,6 @@ export default function AboutPage() {
               </p>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ==================== HEALTHCARE IMAGE ==================== */}
-      <section className="bg-white py-0 pb-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="overflow-hidden rounded-2xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=1200&h=500&fit=crop&q=80"
-                alt="Doctor consulting with an elderly patient in a modern clinical setting"
-                className="h-[320px] w-full object-cover md:h-[400px]"
-              />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ==================== CLINICAL LEADERSHIP ==================== */}
-      <section className="bg-soft-white py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollReveal>
-            <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
-              Clinical Leadership
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
-              Led by Emergency Medicine Physicians
-            </h2>
-            <p className="mt-4 max-w-2xl text-gray-500">
-              Our leadership team brings decades of frontline clinical
-              experience, health informatics expertise, and a shared commitment
-              to raising the standard of remote patient monitoring.
-            </p>
-          </ScrollReveal>
-
-          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {leadership.map((person, i) => (
-              <ScrollReveal key={person.name} delay={i * 120}>
-                <BackgroundGradient
-                  containerClassName="rounded-3xl h-full"
-                  className="rounded-3xl bg-white p-8 h-full flex flex-col"
-                >
-                  {/* Avatar placeholder */}
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-evergreen/10 text-evergreen">
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 28 28"
-                      fill="none"
-                    >
-                      <circle
-                        cx="14"
-                        cy="10"
-                        r="5"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      />
-                      <path
-                        d="M4 26C4 21 8.5 17 14 17C19.5 17 24 21 24 26"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-charcoal">
-                    {person.name}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-emerald">
-                    {person.role}
-                  </p>
-                  <p className="mt-1 text-xs font-medium uppercase tracking-wide text-gray-400">
-                    {person.credentials}
-                  </p>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-500">
-                    {person.bio}
-                  </p>
-                </BackgroundGradient>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 
