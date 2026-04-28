@@ -62,7 +62,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ==================== TELE-SPECIALIST SUPPORT ==================== */}
-      <section className="bg-white py-24">
+      <section id="tele-specialist-support" className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
@@ -125,7 +125,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ==================== REMOTE PATIENT MONITORING ==================== */}
-      <section className="bg-soft-white py-24">
+      <section id="remote-patient-monitoring" className="bg-soft-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
@@ -189,7 +189,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ==================== READMISSION REDUCTION ==================== */}
-      <section className="bg-white py-24">
+      <section id="readmission-reduction" className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
@@ -254,7 +254,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ==================== PARTNERSHIP MODEL ==================== */}
-      <section className="bg-charcoal py-24">
+      <section id="partnership-model" className="bg-charcoal py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">

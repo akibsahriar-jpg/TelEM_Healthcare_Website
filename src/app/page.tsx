@@ -125,25 +125,25 @@ const services = [
     title: "Tele-specialist Support",
     description:
       "Multi-specialty consultative support that assists discharge planning and post-acute care transitions.",
-    href: "/services",
+    href: "/services#tele-specialist-support",
   },
   {
     title: "Remote Patient Monitoring",
     description:
       "Continuous, contactless vital sign monitoring using radar technology. No wearables. No patient burden.",
-    href: "/services",
+    href: "/services#remote-patient-monitoring",
   },
   {
     title: "Readmission Reduction Program",
     description:
       "Proactive intervention protocols that catch clinical deterioration early — keeping patients stable and out of the emergency department.",
-    href: "/services",
+    href: "/services#readmission-reduction",
   },
   {
     title: "Partnership Model",
     description:
       "Seamless integration with your existing clinical workflows and staff. We augment, not replace.",
-    href: "/services",
+    href: "/services#partnership-model",
   },
 ];
 
