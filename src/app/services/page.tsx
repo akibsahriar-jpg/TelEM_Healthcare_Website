@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { BackgroundGradient } from "@/components/BackgroundGradient";
 import { GradientButton } from "@/components/GradientButton";
@@ -6,7 +7,7 @@ import { GradientButton } from "@/components/GradientButton";
 export const metadata: Metadata = {
   title: "Services | TelEM Healthcare",
   description:
-    "Explore TelEM Healthcare's comprehensive remote monitoring solutions: contactless RPM with radar sensors, 24/7 EM-physician-led clinical oversight, and readmission reduction programs for skilled nursing facilities and senior living.",
+    "TelEM Healthcare's modular clinical workflows: tele-specialist support, contactless radar-based remote patient monitoring, and readmission reduction programs — engineered to reduce length of stay and readmissions.",
 };
 
 const integrationSteps = [
@@ -20,7 +21,7 @@ const integrationSteps = [
     step: "02",
     title: "Sensor Deployment",
     description:
-      "Contactless radar sensors are installed in target rooms with zero disruption to daily operations. No patient onboarding required.",
+      "Contactless radar sensors are installed in target rooms with zero disruption to daily operations.",
   },
   {
     step: "03",
@@ -32,7 +33,7 @@ const integrationSteps = [
     step: "04",
     title: "Ongoing Oversight",
     description:
-      "24/7 EM-physician monitoring begins immediately. Your staff receives regular clinical summaries, trend reports, and real-time escalation support.",
+      "Proactive clinical monitoring begins immediately. Your staff receives regular clinical input, trend reports and timely preventive support.",
   },
 ];
 
@@ -47,13 +48,12 @@ export default function ServicesPage() {
               Our Solutions
             </p>
             <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Comprehensive Remote Monitoring Solutions
+              Versatile Clinical Integration Solutions
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-400">
-              Three integrated capabilities — contactless sensing, EM-physician
-              oversight, and proactive intervention protocols — engineered to
-              reduce readmissions and detect clinical deterioration before it
-              becomes an emergency.
+              Our modular clinical workflows are engineered to reduce length
+              of stay, readmissions and logistic pain points in ensuring
+              safe and effective patient disposition.
             </p>
           </div>
         </div>
@@ -61,17 +61,89 @@ export default function ServicesPage() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      {/* ==================== SERVICE 1: RPM ==================== */}
+      {/* ==================== TELE-SPECIALIST SUPPORT ==================== */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
               {/* Left: Content */}
               <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
-                  Service 01
+                <h2 className="text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+                  Tele-specialist Support
+                </h2>
+                <p className="mt-6 text-base leading-relaxed text-gray-500">
+                  Timely involvement of key consultative services with a
+                  focus on assisting discharge planning and post-acute care
+                  transitions – seamless integration with primary clinical
+                  teams, and bridging the process with case management.
                 </p>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+                <ul className="mt-8 space-y-4">
+                  {[
+                    "Efficient patient selection process to identify the need for clinical support",
+                    "Real-time needs assessment with case management staff",
+                    "Creating a clinical support bridge for post-acute care placement",
+                    "Providing continuity of care post discharge",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        className="mt-0.5 shrink-0 text-evergreen"
+                      >
+                        <path
+                          d="M6 10L9 13L14 7"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-sm leading-relaxed text-gray-600">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right: Visual */}
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src="/telemedicine-image.png"
+                  alt="Specialist physician in a telemedicine video consultation with a patient"
+                  width={1536}
+                  height={1024}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ==================== REMOTE PATIENT MONITORING ==================== */}
+      <section className="bg-soft-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+              {/* Left: Visual */}
+              <div className="order-2 overflow-hidden rounded-2xl lg:order-1">
+                <Image
+                  src="/radar-based.png"
+                  alt="Radar-based contactless monitoring of vital signs at the bedside with live dashboard"
+                  width={1432}
+                  height={955}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+
+              {/* Right: Content */}
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
                   Remote Patient Monitoring
                 </h2>
                 <p className="mt-6 text-base leading-relaxed text-gray-500">
@@ -83,7 +155,6 @@ export default function ServicesPage() {
                 <ul className="mt-8 space-y-4">
                   {[
                     "Contactless radar sensors installed in-room — no wearables required",
-                    "Continuous vitals streaming: heart rate, respiratory rate, movement",
                     "Zero patient compliance burden — monitoring happens automatically",
                     "HIPAA-compliant data pipeline with end-to-end encryption",
                     "Real-time trend analytics surfaced to clinical dashboards",
@@ -112,119 +183,19 @@ export default function ServicesPage() {
                 </ul>
               </div>
 
-              {/* Right: Visual */}
-              <div className="overflow-hidden rounded-2xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=500&fit=crop&q=80"
-                  alt="Medical monitoring equipment displaying patient vital signs"
-                  className="h-[360px] w-full object-cover"
-                />
-              </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* ==================== SERVICE 2: EM-LED MONITORING ==================== */}
-      <section className="bg-soft-white py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-              {/* Left: Visual */}
-              <div className="order-2 flex items-center justify-center rounded-2xl border border-gray-200 bg-white p-12 lg:order-1 lg:p-16">
-                <div className="w-full max-w-xs space-y-4">
-                  {[
-                    { label: "Heart Rate", value: "72 bpm", status: "normal" },
-                    { label: "Resp. Rate", value: "16 /min", status: "normal" },
-                    { label: "Movement", value: "Flagged", status: "alert" },
-                  ].map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="flex items-center justify-between rounded-xl border border-gray-200 bg-soft-white px-5 py-4"
-                    >
-                      <div>
-                        <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
-                          {metric.label}
-                        </p>
-                        <p className="mt-0.5 text-lg font-semibold text-charcoal">
-                          {metric.value}
-                        </p>
-                      </div>
-                      <span
-                        className={`inline-flex h-3 w-3 rounded-full ${
-                          metric.status === "alert"
-                            ? "bg-amber-400"
-                            : "bg-evergreen"
-                        }`}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right: Content */}
-              <div className="order-1 lg:order-2">
-                <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
-                  Service 02
-                </p>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
-                  EM-Led Clinical Monitoring
-                </h2>
-                <p className="mt-6 text-base leading-relaxed text-gray-500">
-                  Data without clinical judgment is just noise. TelEM's
-                  board-certified emergency medicine physicians review vital sign
-                  trends around the clock, triaging alerts and coordinating
-                  directly with on-site nursing staff when intervention is
-                  needed.
-                </p>
-                <ul className="mt-8 space-y-4">
-                  {[
-                    "24/7 oversight by board-certified emergency medicine physicians",
-                    "Trend-based clinical review — not just threshold alerting",
-                    "Direct coordination with on-site nursing and care teams",
-                    "Structured escalation protocols for clinical deterioration",
-                    "Clinical summaries and shift reports delivered to facility leadership",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        className="mt-0.5 shrink-0 text-evergreen"
-                      >
-                        <path
-                          d="M6 10L9 13L14 7"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <span className="text-sm leading-relaxed text-gray-600">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ==================== SERVICE 3: READMISSION REDUCTION ==================== */}
+      {/* ==================== READMISSION REDUCTION ==================== */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ScrollReveal>
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
               {/* Left: Content */}
               <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-emerald">
-                  Service 03
-                </p>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
                   Readmission Reduction Program
                 </h2>
                 <p className="mt-6 text-base leading-relaxed text-gray-500">
@@ -267,53 +238,16 @@ export default function ServicesPage() {
               </div>
 
               {/* Right: Visual */}
-              <div className="flex items-center justify-center rounded-2xl border border-gray-200 bg-soft-white p-12 lg:p-16">
-                <div className="w-full max-w-xs space-y-5">
-                  <div className="text-center">
-                    <p className="text-5xl font-bold tracking-tight text-evergreen">
-                      67%
-                    </p>
-                    <p className="mt-2 text-sm font-medium text-charcoal">
-                      Reduction in 30-Day Readmissions
-                    </p>
-                  </div>
-                  <div className="h-px bg-gray-200" />
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div>
-                      <p className="text-2xl font-bold tracking-tight text-charcoal">
-                        &lt;15min
-                      </p>
-                      <p className="mt-1 text-xs text-gray-500">
-                        Avg. Response Time
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-bold tracking-tight text-charcoal">
-                        24/7
-                      </p>
-                      <p className="mt-1 text-xs text-gray-500">
-                        Physician Oversight
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src="/readdmission-reduction.png"
+                  alt="Patient journey from emergency department through acute care, post-acute care, and home"
+                  width={1693}
+                  height={929}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="h-auto w-full object-contain"
+                />
               </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ==================== HEALTHCARE IMAGE ==================== */}
-      <section className="bg-soft-white py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="overflow-hidden rounded-2xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&h=500&fit=crop&q=80"
-                alt="Healthcare team collaborating on patient care plans"
-                className="h-[320px] w-full object-cover md:h-[400px]"
-              />
             </div>
           </ScrollReveal>
         </div>
@@ -360,40 +294,6 @@ export default function ServicesPage() {
               </ScrollReveal>
             ))}
           </div>
-
-          <ScrollReveal delay={200}>
-            <BackgroundGradient
-              containerClassName="mt-16 rounded-3xl"
-              className="rounded-3xl bg-gray-800/90 p-8 md:p-12"
-            >
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                {[
-                  {
-                    title: "Your Staff",
-                    description:
-                      "On-site nurses, CNAs, and clinical leadership continue providing direct patient care with full autonomy.",
-                  },
-                  {
-                    title: "TelEM Layer",
-                    description:
-                      "24/7 remote monitoring, trend analysis, and EM-physician escalation support augment your existing coverage.",
-                  },
-                  {
-                    title: "Shared Outcomes",
-                    description:
-                      "Collaborative accountability for readmission reduction, early intervention, and patient safety metrics.",
-                  },
-                ].map((col) => (
-                  <div key={col.title}>
-                    <h4 className="font-semibold text-emerald">{col.title}</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-gray-400">
-                      {col.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </BackgroundGradient>
-          </ScrollReveal>
         </div>
       </section>
 

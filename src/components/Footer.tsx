@@ -4,8 +4,8 @@ const footerSections = [
   {
     title: "Solutions",
     links: [
+      { href: "/services", label: "Tele-specialist Support" },
       { href: "/services", label: "Remote Patient Monitoring" },
-      { href: "/services", label: "EM-Led Monitoring" },
       { href: "/services", label: "Readmission Reduction" },
       { href: "/services", label: "Partnership Model" },
     ],
