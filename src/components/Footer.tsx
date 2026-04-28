@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerSections = [
   {
@@ -37,41 +38,20 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-evergreen">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-white"
-                >
-                  <circle cx="12" cy="12" r="3" fill="currentColor" />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="7"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    opacity="0.6"
-                  />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="11"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    fill="none"
-                    opacity="0.3"
-                  />
-                </svg>
-              </div>
-              <span className="font-heading text-xl font-bold tracking-tight">
-                TelEM
-              </span>
+            <Link
+              href="/"
+              className="inline-flex items-center rounded-2xl bg-white px-5 py-3"
+              aria-label="TelEM Healthcare home"
+            >
+              <Image
+                src="/telem-logo-new.png"
+                alt="TelEM Healthcare"
+                width={600}
+                height={416}
+                className="h-auto w-32"
+              />
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-gray-400">
               Proactive remote monitoring powered by contactless radar technology
               and 24/7 emergency medicine clinical oversight.
             </p>
