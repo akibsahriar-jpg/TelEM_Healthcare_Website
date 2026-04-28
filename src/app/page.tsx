@@ -6,28 +6,28 @@ import { GradientButton } from "@/components/GradientButton";
 
 const outcomes = [
   {
-    stat: "67%",
-    label: "Reduction in 30-Day Readmissions",
+    stat: "2 days",
+    label: "Reduction in length of stay",
     description:
-      "Early detection of clinical deterioration prevents costly hospital returns.",
+      "Robust clinical support for case management teams facilitates post-acute placement.",
   },
   {
-    stat: "24/7",
-    label: "EM Physician Oversight",
+    stat: "24 hours",
+    label: "Continuity of care post-discharge",
     description:
-      "Board-certified emergency medicine physicians monitor trends around the clock.",
-  },
-  {
-    stat: "<15min",
-    label: "Average Response Time",
-    description:
-      "From alert to clinical intervention, our team acts with urgency.",
+      "Close follow up ensures a safer transition of care after discharge.",
   },
   {
     stat: "100%",
-    label: "Contactless Monitoring",
+    label: "Contactless monitoring",
     description:
-      "Radar-based sensors require zero patient interaction or wearables.",
+      "Radar based physiological sensors require no patient interaction or wearables.",
+  },
+  {
+    stat: ">50%",
+    label: "Reduction in 30-day readmissions",
+    description:
+      "Early Detection of Clinical Deterioration prevents costly hospital returns.",
   },
 ];
 
@@ -122,22 +122,28 @@ const howItWorks = [
 
 const services = [
   {
+    title: "Tele-specialist Support",
+    description:
+      "Multi-specialty consultative support that assists discharge planning and post-acute care transitions.",
+    href: "/services#tele-specialist-support",
+  },
+  {
     title: "Remote Patient Monitoring",
     description:
       "Continuous, contactless vital sign monitoring using radar technology. No wearables. No patient burden.",
-    href: "/services",
+    href: "/services#remote-patient-monitoring",
   },
   {
-    title: "EM-Led Clinical Oversight",
+    title: "Readmission Reduction Program",
     description:
-      "Board-certified emergency medicine physicians provide 24/7 remote clinical monitoring and escalation.",
-    href: "/services",
+      "Proactive intervention protocols that catch clinical deterioration early — keeping patients stable and out of the emergency department.",
+    href: "/services#readmission-reduction",
   },
   {
     title: "Partnership Model",
     description:
       "Seamless integration with your existing clinical workflows and staff. We augment, not replace.",
-    href: "/services",
+    href: "/services#partnership-model",
   },
 ];
 
@@ -167,22 +173,15 @@ export default function Home() {
         <RadarAnimation />
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-8">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald/20 bg-emerald/10 px-4 py-1.5">
-              <span className="h-2 w-2 rounded-full bg-lime animate-signal-blink" />
-              <span className="text-xs font-medium tracking-wide text-emerald">
-                Contactless Radar-Based Monitoring
-              </span>
-            </div>
-
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Proactive Remote Monitoring{" "}
-              <span className="text-emerald">Before the Emergency Call</span>
+              Proactive, integrated care for{" "}
+              <span className="text-emerald">effective care transitions</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-400">
-              TelEM combines contactless radar sensors with 24/7 emergency
-              medicine physician oversight to detect clinical deterioration
-              early — reducing readmissions and improving outcomes.
+              TelEM harnesses the power of digital health by placing it in
+              the hands of practicing clinicians – reducing length of stay
+              and readmissions while improving patient outcomes.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -209,12 +208,13 @@ export default function Home() {
                 Trusted Clinical Infrastructure
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
-                Built on Clinical Rigor, Not Hype
+                Built with focus, implemented with care
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-gray-500">
-                Every alert is backed by emergency medicine expertise.
-                Every protocol meets compliance standards. Every patient is
-                monitored with the same urgency as a hospital floor.
+                Our carefully curated processes facilitate efficiency
+                during the post-acute transition and beyond. This ensures
+                that our patients get the care they need proactively
+                without delay.
               </p>
             </div>
           </ScrollReveal>
@@ -222,16 +222,16 @@ export default function Home() {
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
-                title: "EM-Physician Led",
-                text: "Board-certified emergency medicine physicians, not nurses, not algorithms alone.",
+                title: "Multidisciplinary Support",
+                text: "Effective clinical outcomes from a team-based approach.",
               },
               {
-                title: "HIPAA Compliant",
-                text: "End-to-end encryption, BAA agreements, and SOC 2 aligned infrastructure.",
+                title: "Ambient Monitoring",
+                text: "Using cutting-edge technology to proactively monitor vitals.",
               },
               {
-                title: "Evidence-Based Protocols",
-                text: "Clinical workflows developed in partnership with health system leaders.",
+                title: "Evidence-based Protocols",
+                text: "Clinical workflows rooted in evidence-based medicine.",
               },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100}>
@@ -249,22 +249,6 @@ export default function Home() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ==================== HEALTHCARE IMAGE ==================== */}
-      <section className="bg-soft-white py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="overflow-hidden rounded-2xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1200&h=500&fit=crop&q=80"
-                alt="Healthcare professional monitoring patient vitals on a digital screen"
-                className="h-[320px] w-full object-cover md:h-[400px]"
-              />
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
@@ -360,7 +344,7 @@ export default function Home() {
             </h2>
           </ScrollReveal>
 
-          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service, i) => (
               <ScrollReveal key={service.title} delay={i * 100}>
                 <BackgroundGradient
