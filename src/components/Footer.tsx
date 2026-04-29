@@ -40,7 +40,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link
               href="/"
-              className="inline-flex items-center rounded-2xl bg-white px-5 py-3"
+              className="inline-flex items-center rounded-2xl bg-white px-4 py-2.5"
               aria-label="TelEM Healthcare home"
             >
               <Image
@@ -48,7 +48,7 @@ export function Footer() {
                 alt="TelEM Healthcare"
                 width={600}
                 height={416}
-                className="h-auto w-32"
+                className="h-auto w-24 md:w-28"
               />
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-gray-400">
@@ -80,31 +80,17 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
+        {/*
+          Privacy Policy / Terms of Service / HIPAA Compliance links are
+          intentionally omitted while the corresponding pages
+          (/privacy, /terms, /hipaa) remain in legal-review draft.
+          Re-add this row when the pages are ready to publish.
+        */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-gray-700 pt-8 md:flex-row">
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} TelEM Healthcare. All rights
             reserved.
           </p>
-          <div className="flex gap-6">
-            <Link
-              href="/faq"
-              className="text-sm text-gray-500 transition-colors hover:text-gray-300"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/faq"
-              className="text-sm text-gray-500 transition-colors hover:text-gray-300"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              href="/faq"
-              className="text-sm text-gray-500 transition-colors hover:text-gray-300"
-            >
-              HIPAA Compliance
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
