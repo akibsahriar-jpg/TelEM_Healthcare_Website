@@ -17,18 +17,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TelEM Healthcare | Proactive Remote Patient Monitoring",
-  description:
-    "Contactless, radar-based remote monitoring with 24/7 emergency medicine clinical oversight. Reducing readmissions and enabling early detection for skilled nursing facilities and senior living.",
-  keywords: [
-    "remote patient monitoring",
-    "RPM",
-    "telehealth",
-    "senior care",
-    "skilled nursing",
-    "radar monitoring",
-    "healthcare technology",
-  ],
+  metadataBase: new URL("https://telemhealthcare.com"),
+  title: "TelEM Healthcare | Proactive, Integrated Care Transitions",
+  // description intentionally omitted — client preference.
+  openGraph: {
+    title: "TelEM Healthcare | Proactive, Integrated Care Transitions",
+    siteName: "TelEM Healthcare",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TelEM Healthcare | Proactive, Integrated Care Transitions",
+  },
 };
 
 export default function RootLayout({
